@@ -671,32 +671,40 @@ class WorkExpPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                 ),
               ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.blue,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("OpenGenus Foundation",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(22.0),
+                      child: IconButton(
+                        icon: FaIcon(FontAwesomeIcons.terminal),
+                        onPressed: (){},
+                        color: Colors.yellow,
+                        iconSize: 25,
                       ),
-                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(0.0),
+                      child: Text("OpenGenus \nFoundation",
+                        style : TextStyle(
+                          fontFamily: 'Sniglet',
+                          fontSize: 24,
+                          color: Colors.redAccent,
+                          letterSpacing: 2.0,
+                          height: 2,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(30,0,20,0),
