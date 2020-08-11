@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'aboutme.dart';
+import 'educationPage.dart';
+import 'workExperience.dart';
+import 'skills.dart';
+import 'projects.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +18,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => FirstScreen(),
-        '/aboutMe' : (context) => AboutMe(),
+        '/aboutMe': (context) => AboutMe(),
         '/education': (context) => EducationPage(),
         '/workexperience': (context) => WorkExpPage(),
+        '/skills': (context) => Skills(),
+        '/project': (context) => project(),
       },
     );
   }
@@ -30,8 +37,7 @@ class FirstScreen extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage("images/background.png"),fit: BoxFit.cover
-            ),
+                image: AssetImage("images/background.png"), fit: BoxFit.cover),
 //            gradient: LinearGradient(
 //                begin: Alignment.topLeft,
 //                end: Alignment.bottomRight,
@@ -99,6 +105,7 @@ class FirstScreen extends StatelessWidget {
                       'ABOUT ME',
                       style: TextStyle(
                         fontSize: 20,
+                        fontFamily: "Comfortaa",
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),
@@ -123,6 +130,7 @@ class FirstScreen extends StatelessWidget {
                     title: Text(
                       "MY EDUCATION",
                       style: TextStyle(
+                        fontFamily: "Comfortaa",
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
@@ -146,8 +154,9 @@ class FirstScreen extends StatelessWidget {
                       size: 35,
                     ),
                     title: Text(
-                      'WORK EXPERIENCE',
+                      'EXPERIENCE',
                       style: TextStyle(
+                        fontFamily: "Comfortaa",
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
@@ -173,6 +182,7 @@ class FirstScreen extends StatelessWidget {
                     title: Text(
                       'MY SKILLS',
                       style: TextStyle(
+                        fontFamily: "Comfortaa",
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
@@ -181,7 +191,7 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  print("pressed");
+                  Navigator.pushNamed(context, '/skills');
                 },
               ),
               RaisedButton(
@@ -198,6 +208,7 @@ class FirstScreen extends StatelessWidget {
                     title: Text(
                       'MY PROJECTS',
                       style: TextStyle(
+                        fontFamily: "Comfortaa",
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Colors.black,
@@ -206,7 +217,7 @@ class FirstScreen extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  print("pressed");
+                  Navigator.pushNamed(context, '/project');
                 },
               ),
               SizedBox(
@@ -215,7 +226,7 @@ class FirstScreen extends StatelessWidget {
               Row(
                 children: <Widget>[
                   SizedBox(
-                    width: 65,
+                    width: 55,
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.twitter),
@@ -263,6 +274,7 @@ linked_in_url() async {
     throw 'Could not launch $url';
   }
 }
+
 twitter_url() async {
   const url = 'https://twitter.com/AbhijitTripat13';
   if (await canLaunch(url)) {
@@ -271,6 +283,7 @@ twitter_url() async {
     throw 'Could not launch $url';
   }
 }
+
 github_url() async {
   const url = 'https://github.com/Abhijit2505';
   if (await canLaunch(url)) {
@@ -279,6 +292,7 @@ github_url() async {
     throw 'Could not launch $url';
   }
 }
+
 quora_url() async {
   const url = 'https://www.quora.com/profile/Abhijit-Tripathy-9';
   if (await canLaunch(url)) {
@@ -287,6 +301,7 @@ quora_url() async {
     throw 'Could not launch $url';
   }
 }
+
 medium_url() async {
   const url = 'https://medium.com/@abhijittripathy99';
   if (await canLaunch(url)) {
@@ -296,766 +311,3 @@ medium_url() async {
   }
 }
 
-class AboutMe extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("ABOUT ME"),
-        backgroundColor: Colors.black,
-      ),
-      body: SingleChildScrollView(
-        child: new Container(
-          padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/aboutus.png"),fit: BoxFit.cover
-            ),
-//            gradient: LinearGradient(
-//                begin: Alignment.topLeft,
-//                end: Alignment.bottomRight,
-//                stops: [0.3, 1],
-//                colors: [Colors.black87, Colors.black]),
-          ),
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("Who Am I ?",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 37,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text("I am an enthusiastic developer, learner, an adventurous CS geek with some designing knack. "
-                    "Also I am a strong believer that imagination brings the change and shows a path to"
-                  " develop something amazing and interesting. My interests include designing and developing sustainable "
-                    "products which can solve people's problems.",
-                style : TextStyle(
-                  fontFamily: 'Comfortaa',
-                  fontSize: 17,
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  height: 2,
-                  fontWeight: FontWeight.w500,
-                ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("What Am I ?",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 37,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text("I am a student, a developer and a designer. I am a"
-                    "part-time writer and mentor as well. I am someone who loves solitude the "
-                    "most. Solitude generates the best out of me.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("My Hobbies",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 37,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(50,0,20,0),
-                child: Row(
-                  children: <Widget>[
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.music),
-                        color: Colors.pinkAccent,
-                        iconSize: 30,
-                        onPressed: (){}
-                    ),
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.playCircle),
-                        color: Colors.yellowAccent,
-                        iconSize: 33,
-                        onPressed: (){}
-                    ),
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.gamepad),
-                        color: Colors.purpleAccent,
-                        iconSize: 33,
-                        onPressed: (){}
-                    ),
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.feather),
-                        color: Colors.greenAccent,
-                        iconSize: 33,
-                        onPressed: (){}
-                    ),
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.tableTennis),
-                        color: Colors.blueAccent,
-                        iconSize: 33,
-                        onPressed: (){}
-                    ),
-                    IconButton(
-                        icon: FaIcon(FontAwesomeIcons.bug),
-                        color: Colors.redAccent,
-                        iconSize: 33,
-                        onPressed: (){}
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("My Goals In Life",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 37,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text("In everyday life I witness a lot of problems in my "
-                    "surrounding that can be solved using technology. My goal in"
-                    "life is to design something good, that can solve people's problem and "
-                    "can inspire the upcoing generation as well.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 40,
-                width: 260,
-                child: Divider(
-                  color: Colors.redAccent,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class EducationPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "MY EDUCATION"
-        ),
-        backgroundColor: Colors.black,
-      ),
-      body: SingleChildScrollView(
-        child: new Container(
-          padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/education.png"),fit: BoxFit.cover
-            ),
-          ),
-          child: Column(
-            children: <Widget>[
-              Center(
-                child: IconButton(
-                  icon: FaIcon(FontAwesomeIcons.university),
-                  iconSize: 80,
-                  color: Colors.white,
-                  onPressed: (){},
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("GURU GHASIDAS VISHWAVIDYALYA, BILASPUR",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 27,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Text("B.Tech, Computer Science And Engineering\n"
-                    "(2019-2023)\n\n"
-                    "I am currently an undergraduate and a junior developer majoring in CSE, "
-                    "more specifically product development and deployment in distributed system.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Center(
-                child: IconButton(
-                  icon: FaIcon(FontAwesomeIcons.building),
-                  iconSize: 80,
-                  color: Colors.white,
-                  onPressed: (){},
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("B.J.B. JUNIOR COLLEGE, BHUBANESHWAR",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 27,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Text("Intermediate Of Science, PCMSt\n"
-                    "(2015-2017)\n\n"
-                    "I have completed my schooling majoring in PCM and Statistics."
-                    "Also I was the topper of statistics in state. ",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Center(
-                child: IconButton(
-                  icon: FaIcon(FontAwesomeIcons.school),
-                  iconSize: 80,
-                  color: Colors.white,
-                  onPressed: (){},
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Text("SARASWATI SISHU VIDYA MANDIR, SUNDERGARH",
-                  style : TextStyle(
-                    fontFamily: 'Sniglet',
-                    fontSize: 27,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Text("PRIMARY & SECONDARY SCHOOLING\n"
-                    "(2007-2015)\n\n"
-                    "I was the topper of my school as well as my district in the matriculation"
-                    " exam by BSE, Odisha.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 80,
-                width: 260,
-                child: Divider(
-                  color: Colors.redAccent,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class WorkExpPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("MY WORK EXPERIENCE"),
-        backgroundColor: Colors.black,
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.fromLTRB(0, 25, 0, 0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/workexperience.png"),fit: BoxFit.cover
-            ),
-          ),
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,30,0),
-                child: Text(
-                  "My work experience include working for startups, communities and"
-                      "evolving with innovative business and marketing strategies",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontFamily: "Comfortaa",
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                    textAlign: TextAlign.center,
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.blue,
-                  ),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                child: Row(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(22.0),
-                      child: IconButton(
-                        icon: FaIcon(FontAwesomeIcons.terminal),
-                        onPressed: (){},
-                        color: Colors.yellow,
-                        iconSize: 25,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(0.0),
-                      child: Text("OpenGenus \nFoundation",
-                        style : TextStyle(
-                          fontFamily: 'Sniglet',
-                          fontSize: 24,
-                          color: Colors.redAccent,
-                          letterSpacing: 2.0,
-                          height: 2,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Data Structures and Algorithms Developer Intern)\n"
-                    "[May 2020 - present]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("My Roles and Responsibilities for this position are to :\n"
-                "=> Open-Source contribution in the existing project codes\n"
-                "=> Writing technical articles",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("Widhya",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Mission Advocate)\n"
-                    "[June 2020 - present]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("My responsibilities include,\n"
-                "=> Creating content for Missions\n"
-                "=> Creating communities and helping to reach out to more students\n"
-                "=> Participate in the decision making processes along with the rest of Team Widhya",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("Wealthy Waste",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Data Analytics & Research Intern)\n"
-                    "[May 2020 - June 2020]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("My Roles and Responsibilities for this position :\n"
-                "=> Analysis of the provided data (Exploratory Data Analysis)\n"
-                "=> Correlating the data with real-life incidents, by using Statistical Analysis\n"
-                "=> Preparing a research output based on the findings",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("GeeksForGeeks",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Technical Content Writer Intern)\n"
-                    "[May 2020 - present]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("My Roles and Responsibilities for this position are:\n"
-                    "=> Writing innovative technical articles\n"
-                    "=> Editing and improving the code and content of the existing article",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("IncubateIND",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Fellow)\n"
-                    "[June 2020 - present]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("INCIND Technology Fellowship is a unique and exclusive "
-                    "program for the coders, hackers, designers and innovators of "
-                    "tomorrow. As part of this fellowship, you will get an opportunity "
-                    "to develop your skills by working with senior technology leaders "
-                    "and industry experts.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: IconButton(
-                      icon: FaIcon(FontAwesomeIcons.terminal),
-                      onPressed: (){},
-                      color: Colors.yellow,
-                      iconSize: 25,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(0.0),
-                    child: Text("Lets Upgrade",
-                      style : TextStyle(
-                        fontFamily: 'Sniglet',
-                        fontSize: 24,
-                        color: Colors.redAccent,
-                        letterSpacing: 2.0,
-                        height: 2,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("(Project Manager and Mentor)\n"
-                    "[July 2020 - Present]",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.lightBlueAccent,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(30,0,20,0),
-                child: Text("I have started working as a Project Manager as well "
-                    "as a Mentor for my open-sourced project named Algorithmic "
-                    "Treasure for the open-sourced competition named BWLU"
-                "This project aims to build a website which will contain the "
-                    "codes along with the techniques and explanations so that "
-                    "it can be helpful for many.",
-                  style : TextStyle(
-                    fontFamily: 'Comfortaa',
-                    fontSize: 17,
-                    color: Colors.white,
-                    letterSpacing: 2.0,
-                    height: 2,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
