@@ -1,3 +1,6 @@
+<img src="https://github.com/Abhijit2505/Portfolio-App-Template/blob/master/images/3.png" height = "200">
+
+
 # Portfolio Application Template
 
 <img src="https://img.shields.io/github/license/Abhijit2505/Portfolio-App?style=for-the-badge">&nbsp;<img src ="https://img.shields.io/github/languages/code-size/Abhijit2505/Portfolio-App?style=for-the-badge">&nbsp;<img src = "https://img.shields.io/github/contributors/Abhijit2505/Portfolio-App?style=for-the-badge">&nbsp;<img src ="https://img.shields.io/github/last-commit/Abhijit2505/Portfolio-App?style=for-the-badge">
