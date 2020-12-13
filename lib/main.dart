@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -15,15 +16,38 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => FirstScreen(),
+        '/': (context) => SplashScreen(),
         '/aboutMe': (context) => AboutMe(),
         '/education': (context) => EducationPage(),
         '/workexperience': (context) => WorkExpPage(),
         '/skills': (context) => Skills(),
         '/project': (context) => project(),
       },
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 3), ()=> Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => FirstScreen())));
+  }
+ 
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      child: Image.asset("images/portfolio_img_2.png"),
     );
   }
 }
