@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'aboutme.dart';
@@ -14,6 +15,9 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.grey,
+    ));
     return new MaterialApp(
       initialRoute: '/',
       routes: {
@@ -32,233 +36,250 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: SingleChildScrollView(
-        child: new Container(
-          padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("images/background.png"), fit: BoxFit.cover),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: new Container(
+            padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/background.png"), fit: BoxFit.cover),
 //            gradient: LinearGradient(
 //                begin: Alignment.topLeft,
 //                end: Alignment.bottomRight,
 //                stops: [0.3, 1],
 //                colors: [Colors.black, Colors.black]),
-          ),
-          child: Column(
-            children: <Widget>[
-              IconButton(
-                  icon: FaIcon(FontAwesomeIcons.android),
-                  color: Colors.greenAccent,
-                  iconSize: 180,
-                  onPressed: () {}),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                "Abhijit Tripathy",
-                style: TextStyle(
-                  fontFamily: 'Sniglet',
-                  fontSize: 40.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
+            ),
+            child: Column(
+              children: <Widget>[
+                IconButton(
+                    icon: FaIcon(FontAwesomeIcons.android),
+                    color: Colors.greenAccent,
+                    iconSize: 180,
+                    onPressed: () {}),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                "Junior Data Scientist \n\n"
-                "    & DSA Developer",
-                style: TextStyle(
-                  fontFamily: 'Comfortaa',
-                  fontSize: 17,
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              SizedBox(
-                height: 27,
-                width: 250,
-                child: Divider(
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.face,
-                      color: Colors.brown,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'ABOUT ME',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: "Comfortaa",
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/aboutMe');
-                },
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.school,
-                      color: Colors.blue[900],
-                      size: 35,
-                    ),
-                    title: Text(
-                      "MY EDUCATION",
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/education');
-                },
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.work,
-                      color: Colors.green,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'EXPERIENCE',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/workexperience');
-                },
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.code,
-                      color: Colors.black,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'MY SKILLS',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/skills');
-                },
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.dashboard,
-                      color: Colors.pink,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'MY PROJECTS',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/project');
-                },
-              ),
-              SizedBox(
-                height: 29,
-              ),
-              Row(
-                children: <Widget>[
-                  SizedBox(
-                    width: 55,
-                  ),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.twitter),
-                    color: Colors.lightBlueAccent,
-                    iconSize: 40,
-                    onPressed: twitter_url,
-                  ),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.github),
+                Text(
+                  "Abhijit Tripathy",
+                  style: TextStyle(
+                    fontFamily: 'Sniglet',
+                    fontSize: 40.0,
                     color: Colors.white,
-                    iconSize: 40,
-                    onPressed: github_url,
+                    fontWeight: FontWeight.w500,
                   ),
-                  IconButton(
-                      icon: FaIcon(FontAwesomeIcons.linkedin),
-                      color: Colors.blue[600],
-                      iconSize: 43,
-                      onPressed: linked_in_url),
-                  IconButton(
-                      icon: FaIcon(FontAwesomeIcons.quora),
-                      color: Colors.red,
-                      iconSize: 43,
-                      onPressed: quora_url),
-                  IconButton(
-                    icon: FaIcon(FontAwesomeIcons.medium),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  "Junior Data Scientist \n\n"
+                  "    & DSA Developer",
+                  style: TextStyle(
+                    fontFamily: 'Comfortaa',
+                    fontSize: 17,
                     color: Colors.white,
-                    iconSize: 43,
-                    onPressed: medium_url,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.w500,
                   ),
-                ],
-              )
-            ],
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                SizedBox(
+                  height: 27,
+                  width: 250,
+                  child: Divider(
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                RaisedButton(
+                  color: Colors.transparent,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    color: Colors.white,
+                    margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.face,
+                        color: Colors.brown,
+                        size: 35,
+                      ),
+                      title: Text(
+                        'ABOUT ME',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: "Comfortaa",
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/aboutMe');
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.transparent,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                    color: Colors.white,
+                    margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.school,
+                        color: Colors.blue[900],
+                        size: 35,
+                      ),
+                      title: Text(
+                        "MY EDUCATION",
+                        style: TextStyle(
+                          fontFamily: "Comfortaa",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/education');
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.transparent,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    color: Colors.white,
+                    margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.work,
+                        color: Colors.green,
+                        size: 35,
+                      ),
+                      title: Text(
+                        'EXPERIENCE',
+                        style: TextStyle(
+                          fontFamily: "Comfortaa",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/workexperience');
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.transparent,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    color: Colors.white,
+                    margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.code,
+                        color: Colors.black,
+                        size: 35,
+                      ),
+                      title: Text(
+                        'MY SKILLS',
+                        style: TextStyle(
+                          fontFamily: "Comfortaa",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/skills');
+                  },
+                ),
+                RaisedButton(
+                  color: Colors.transparent,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    color: Colors.white,
+                    margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.dashboard,
+                        color: Colors.pink,
+                        size: 35,
+                      ),
+                      title: Text(
+                        'MY PROJECTS',
+                        style: TextStyle(
+                          fontFamily: "Comfortaa",
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/project');
+                  },
+                ),
+                SizedBox(
+                  height: 29,
+                ),
+                Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 55,
+                    ),
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.twitter),
+                      color: Colors.lightBlueAccent,
+                      iconSize: 40,
+                      onPressed: twitter_url,
+                    ),
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.github),
+                      color: Colors.white,
+                      iconSize: 40,
+                      onPressed: github_url,
+                    ),
+                    IconButton(
+                        icon: FaIcon(FontAwesomeIcons.linkedin),
+                        color: Colors.blue[600],
+                        iconSize: 43,
+                        onPressed: linked_in_url),
+                    IconButton(
+                        icon: FaIcon(FontAwesomeIcons.quora),
+                        color: Colors.red,
+                        iconSize: 43,
+                        onPressed: quora_url),
+                    IconButton(
+                      icon: FaIcon(FontAwesomeIcons.medium),
+                      color: Colors.white,
+                      iconSize: 43,
+                      onPressed: medium_url,
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),
