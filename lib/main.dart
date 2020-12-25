@@ -70,7 +70,7 @@ class FirstScreen extends StatelessWidget {
                 "Junior Data Scientist \n\n"
                 "    & DSA Developer",
                 style: TextStyle(
-                  fontFamily: 'Comfortaa',
+                  fontFamily: 'Caveat Brush',
                   fontSize: 17,
                   color: Colors.white,
                   letterSpacing: 2.0,
@@ -90,136 +90,175 @@ class FirstScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.face,
-                      color: Colors.brown,
-                      size: 35,
+              Container(
+                height: 50.0,
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.deepPurple, Colors.purple],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Text("ABOUT ME",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 19),
                     ),
-                    title: Text(
-                      'ABOUT ME',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: "Comfortaa",
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+                  ),
+                  ),
+
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/aboutMe');
+                  },
+                ),
+              ),
+
+
+              Container(
+                height: 50.0,
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.purple, Colors.deepPurple],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Text("MY EDUCATION",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+
+                          ),
+                      ),
+                    ),
+
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/education');
+                  },
+              ),
+              ),
+              Container(
+                height: 50.0,
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.deepPurple, Colors.purple],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Text("EXPERIENCE",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+
                       ),
                     ),
                   ),
+
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/workexperience');
+                  },
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/aboutMe');
-                },
               ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.school,
-                      color: Colors.blue[900],
-                      size: 35,
-                    ),
-                    title: Text(
-                      "MY EDUCATION",
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+              Container(
+                height: 50.0,
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.purple, Colors.deepPurple],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Text("MY SKILLS",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+
                       ),
                     ),
                   ),
+
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/skills');
+                  },
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/education');
-                },
               ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.work,
-                      color: Colors.green,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'EXPERIENCE',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
+              Container(
+                height: 50.0,
+                margin: EdgeInsets.all(10),
+                child: RaisedButton(
+
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.purple, Colors.deepPurple],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      alignment: Alignment.center,
+                      child: Text("MY PROJECT",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+
+
                       ),
                     ),
                   ),
+
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/project');
+                  },
                 ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/workexperience');
-                },
               ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.code,
-                      color: Colors.black,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'MY SKILLS',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/skills');
-                },
-              ),
-              RaisedButton(
-                color: Colors.transparent,
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.fromLTRB(20, 15, 20, 15),
-                  child: ListTile(
-                    leading: Icon(
-                      Icons.dashboard,
-                      color: Colors.pink,
-                      size: 35,
-                    ),
-                    title: Text(
-                      'MY PROJECTS',
-                      style: TextStyle(
-                        fontFamily: "Comfortaa",
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.pushNamed(context, '/project');
-                },
-              ),
+
+
               SizedBox(
                 height: 29,
               ),
@@ -230,7 +269,7 @@ class FirstScreen extends StatelessWidget {
                   ),
                   IconButton(
                     icon: FaIcon(FontAwesomeIcons.twitter),
-                    color: Colors.lightBlueAccent,
+                    color: Colors.lightBlue,
                     iconSize: 40,
                     onPressed: twitter_url,
                   ),
@@ -242,7 +281,7 @@ class FirstScreen extends StatelessWidget {
                   ),
                   IconButton(
                       icon: FaIcon(FontAwesomeIcons.linkedin),
-                      color: Colors.blue[600],
+                      color: Colors.indigoAccent,
                       iconSize: 43,
                       onPressed: linked_in_url),
                   IconButton(
