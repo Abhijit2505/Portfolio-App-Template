@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -93,11 +94,13 @@ class FirstScreen extends StatelessWidget {
               Container(
                 height: 50.0,
                 margin: EdgeInsets.all(10),
-                child: RaisedButton(
+                child: MaterialButton(
 
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   padding: EdgeInsets.all(0.0),
+                  splashColor : Colors.blueAccent,
+
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -105,14 +108,24 @@ class FirstScreen extends StatelessWidget {
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
+
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
-                      alignment: Alignment.center,
-                      child: Text("ABOUT ME",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 19),
+                      BoxConstraints(maxWidth: 260.0, minHeight: 60.0),
+                      alignment: Alignment.topRight,
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.face_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      title: Text("About Me",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: "Comfortaa"),
+                      ),
+
+
                     ),
                   ),
                   ),
@@ -125,13 +138,14 @@ class FirstScreen extends StatelessWidget {
 
 
               Container(
-                height: 50.0,
+                height: 60.0,
                 margin: EdgeInsets.all(10),
-                child: RaisedButton(
+                child: MaterialButton(
 
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   padding: EdgeInsets.all(0.0),
+                  splashColor : Colors.blueAccent,
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -142,11 +156,18 @@ class FirstScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 260.0, minHeight: 60.0),
                       alignment: Alignment.center,
-                      child: Text("MY EDUCATION",
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.school_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      title : Text("My Education",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white, fontSize:20, fontFamily: "Comfortaa"),
+                      ),
 
                           ),
                       ),
@@ -158,13 +179,14 @@ class FirstScreen extends StatelessWidget {
               ),
               ),
               Container(
-                height: 50.0,
+                height: 60.0,
                 margin: EdgeInsets.all(10),
-                child: RaisedButton(
+                child: MaterialButton(
 
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   padding: EdgeInsets.all(0.0),
+                  splashColor : Colors.blueAccent,
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -175,11 +197,18 @@ class FirstScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 260.0, minHeight: 60.0),
                       alignment: Alignment.center,
-                      child: Text("EXPERIENCE",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.work_outline,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        title : Text("Experience",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.white, fontSize:20, fontFamily: "Comfortaa"),
+                        ),
 
                       ),
                     ),
@@ -191,13 +220,14 @@ class FirstScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 50.0,
+                height: 60.0,
                 margin: EdgeInsets.all(10),
-                child: RaisedButton(
+                child: MaterialButton(
 
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   padding: EdgeInsets.all(0.0),
+                  splashColor : Colors.blueAccent,
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -208,15 +238,24 @@ class FirstScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 260.0, minHeight: 60.0),
                       alignment: Alignment.center,
-                      child: Text("MY SKILLS",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.code_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        title : Text("My Skills",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.white, fontSize:20, fontFamily: "Comfortaa"),
+                        ),
+
+                      ),
 
                       ),
                     ),
-                  ),
+
 
                   onPressed: () {
                     Navigator.pushNamed(context, '/skills');
@@ -224,13 +263,14 @@ class FirstScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 50.0,
+                height: 60.0,
                 margin: EdgeInsets.all(10),
-                child: RaisedButton(
+                child: MaterialButton(
 
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
                   padding: EdgeInsets.all(0.0),
+                  splashColor : Colors.blueAccent,
                   child: Ink(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -241,16 +281,24 @@ class FirstScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                      BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                      BoxConstraints(maxWidth: 260.0, minHeight: 60.0),
                       alignment: Alignment.center,
-                      child: Text("MY PROJECT",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      child: ListTile(
+                        leading: Icon(
+                          Icons.dashboard_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                        title : Text("My Project",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.white, fontSize:20, fontFamily: "Comfortaa"),
+                        ),
 
+                      ),
 
                       ),
                     ),
-                  ),
+
 
                   onPressed: () {
                     Navigator.pushNamed(context, '/project');
