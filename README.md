@@ -10,7 +10,7 @@ This is a very simple portfolio template using Flutter SDK and Dart made for pub
 ## Installation
 
     1 - Clone this repository - git clone https://github.com/Abhijit2505/eduAlgo
-    2 - Open up thee folder with Android Studio
+    2 - Open up the folder with Android Studio
     3 - Use the template with the License and Credit remaining attached
 
 ## License
